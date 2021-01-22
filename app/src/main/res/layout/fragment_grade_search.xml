@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    >
+<TextView
+    android:id="@+id/searchByTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Search By:"
+    android:textSize="16sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginStart="20dp"
+    />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/searchByTextView"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/search_fragment_id_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/search_fragment_code_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Program Code"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/search_fragment_View1"
+        android:layout_below="@+id/searchByTextView"
+        >
+        <LinearLayout
+            android:id="@+id/linearSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/search_fragment_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight=".9"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/search_fragment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mybutton"
+                android:text="Search"
+                android:textColor="@android:color/white"
+                android:layout_weight=".2"
+                android:layout_marginStart="10dp"
+                />
+        </LinearLayout>
+        <ListView
+            android:id="@+id/search_fragment_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/colorAccent"
+            android:dividerHeight="1dp"
+            android:listSelector="@color/colorAccent"
+            android:visibility="gone"
+
+            />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_fragment_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_fragment_View1"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        />
+</RelativeLayout>
